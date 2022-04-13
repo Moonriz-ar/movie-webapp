@@ -1,6 +1,11 @@
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  // route navigate react hook
+  const navigate = useNavigate();
+
+  // login form handler
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -57,8 +62,14 @@ function Login() {
       .then((data) => {
         console.log("data", data);
         if (data) {
+          Swal.fire({
+            title: "Ingresaste correctamente!",
+            icon: "success",
+            timer: 2000,
+          });
           const tokenRecibido = data.token;
           localStorage.setItem("token", tokenRecibido);
+          navigate("/listado");
         }
       });
   };
