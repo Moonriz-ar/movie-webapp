@@ -76,16 +76,26 @@ function Login() {
 
   return (
     <>
-      <h2>Formulario de submit</h2>
+      <h2>Login form</h2>
       <form onSubmit={submitHandler}>
         <label htmlFor="email">
           <span>Email:</span>
-          <input type="email" name="email" id="email" />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Please enter email..."
+          />
         </label>
 
         <label htmlFor="password">
           <span>Password:</span>
-          <input type="password" name="password" id="password" />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Please enter password..."
+          />
         </label>
 
         <button type="submit">Ingresar</button>
