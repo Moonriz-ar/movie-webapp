@@ -38,6 +38,7 @@ describe("Test login component", () => {
     fireEvent.change(actualEmailInput, {
       target: { value: "challenge@alkemy.org" },
     });
+    expect(actualEmailInput.value).toBe("challenge@alkemy.org");
   });
 
   test("Should render password input element", async () => {
@@ -56,5 +57,6 @@ describe("Test login component", () => {
     fireEvent.change(actualPasswordInput, {
       target: { value: "react" },
     });
+    expect(actualPasswordInput.value).toBe("react");
   });
 });
