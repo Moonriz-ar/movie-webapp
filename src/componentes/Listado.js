@@ -1,19 +1,12 @@
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { Navigate } from "react-router-dom";
 import Card from "./Card";
 
 function Listado() {
-  const navigate = useNavigate();
   const token = localStorage.getItem("token");
-
-  useEffect(() => {
-    if (token === null) {
-      navigate("/");
-    }
-  });
 
   return (
     <>
+      {!token && <Navigate replace to="/" />}
       <h2>Este es el componente de listado</h2>
       <section className="grid grid-cols-4 gap-4">
         <Card

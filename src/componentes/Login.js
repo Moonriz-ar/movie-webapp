@@ -1,9 +1,12 @@
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
 function Login() {
   // route navigate react hook
   const navigate = useNavigate();
+
+  // retrieve token to protect login page after login
+  const token = localStorage.getItem("token");
 
   // login form handler
   const submitHandler = (event) => {
@@ -76,6 +79,7 @@ function Login() {
 
   return (
     <>
+      {token && <Navigate to="/listado" />}
       <h2>Login form</h2>
       <form onSubmit={submitHandler}>
         <label htmlFor="email">
