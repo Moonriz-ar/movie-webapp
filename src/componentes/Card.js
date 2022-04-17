@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Card({ movie }) {
   return (
     <div className="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
@@ -14,9 +16,9 @@ function Card({ movie }) {
         <p className="paragraph-normal text-gray-600">
           {`${movie.overview.substring(0, 150)}...`}
         </p>
-        <a className="mt-3 block" href="/">
-          See details
-        </a>
+        <Link className="mt-3 block" to={`/detalle?movieID=${movie.id}`}>
+          View details
+        </Link>
       </div>
     </div>
   );
