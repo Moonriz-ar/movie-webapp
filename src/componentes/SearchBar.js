@@ -1,6 +1,8 @@
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function SearchBar() {
+  const navigate = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
     const keyword = e.currentTarget.keyword.value.trim();
@@ -16,6 +18,8 @@ function SearchBar() {
         icon: "error",
         title: "You have to enter at least 4 characters",
       });
+    } else {
+      navigate("/resultados");
     }
   };
 

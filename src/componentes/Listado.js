@@ -26,7 +26,7 @@ function Listado() {
   }, [setMoviesList]);
 
   return (
-    <section className="max-w-lg md:max-w-6xl p-10 mx-auto">
+    <section className="max-w-lg md:max-w-6xl mx-auto">
       {!token && <Navigate replace to="/" />}
       <h2 className="pb-5 text-xl text-slate-800">Movies list</h2>
       <section className="grid xs:grid-cols-1 md:grid-cols-4 gap-5">
