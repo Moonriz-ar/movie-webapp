@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<Login />} end />
           <Route path="/listado" element={<Listado />} />
           <Route path="/detalle" element={<Detalle />} />
-          <Route path="/resultados" element={<Resultados />} />
+          <Route path="/resultados/:keyword" element={<Resultados />} />
         </Routes>
       </div>
       <Footer />

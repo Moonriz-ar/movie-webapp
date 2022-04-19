@@ -6,7 +6,6 @@ function SearchBar() {
   const submitHandler = (e) => {
     e.preventDefault();
     const keyword = e.currentTarget.keyword.value.trim();
-    console.log("keyword", keyword);
 
     if (keyword.length === 0) {
       Swal.fire({
@@ -19,7 +18,8 @@ function SearchBar() {
         title: "You have to enter at least 4 characters",
       });
     } else {
-      navigate("/resultados");
+      e.currentTarget.keyword.value = "";
+      navigate(`/resultados/${keyword}`);
     }
   };
 

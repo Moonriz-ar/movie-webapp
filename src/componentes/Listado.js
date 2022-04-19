@@ -23,7 +23,7 @@ function Listado() {
     } catch (err) {
       console.log(err);
     }
-  }, [setMoviesList]);
+  }, []);
 
   return (
     <section className="max-w-lg md:max-w-6xl mx-auto">
