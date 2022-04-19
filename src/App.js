@@ -8,9 +8,9 @@ import Footer from "./componentes/Footer";
 
 function App() {
   return (
-    <div id="app" className="h-screen flex flex-col justify-between">
+    <div id="app" className="h-screen flex flex-col justify-between relative">
       <Header />
-      <div className="flex-auto mb-auto">
+      <div className="flex-auto mb-auto pt-28 md:pt-20 bg-slate-50">
         <Routes>
           <Route path="/" element={<Login />} end />
           <Route path="/listado" element={<Listado />} />

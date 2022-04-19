@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function MovieListCard({ movie }) {
   return (
-    <div className="bg-white border-gray-100 rounded-lg border shadow max-w-xs md:max-w-none overflow-hidden flex flex-col">
+    <div className="bg-white border-gray-100 rounded-lg border shadow md:max-w-none overflow-hidden flex flex-col">
       <img
         className="h-56 lg:h-60 w-full object-cover"
         src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
@@ -15,7 +15,7 @@ function MovieListCard({ movie }) {
           {`${movie.overview.substring(0, 150)}...`}
         </p>
       </div>
-      <div className="bg-rose-700 text-rose-50 py-2 px-4 rounded-lg text-left mt-auto">
+      <div className="bg-rose-700 text-rose-50 py-2 px-4 rounded-lg mt-auto mx-auto mb-4">
         <Link className="p-2" to={`/detalle?movieID=${movie.id}`}>
           View details
         </Link>

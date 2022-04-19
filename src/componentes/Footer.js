@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="p-2 bg-rose-800 text-rose-50 text-center">
+    <footer className="p-2 bg-rose-800 text-rose-200 text-center text-xs">
       <nav>
         <ul className="flex flex-col">
           <li>

@@ -1,7 +1,7 @@
 function MovieDetailCard({ movie }) {
   return (
-    <div className="py-3 sm:max-w-3xl sm:mx-auto">
-      <div className="bg-white shadow-lg border-gray-100 border sm:rounded-3xl p-8 flex space-x-8">
+    <div className="py-3 my-5 sm:max-w-3xl sm:mx-auto">
+      <div className="bg-white shadow-lg border-gray-100 border sm:rounded-3xl p-8 flex space-x-8 mx-5 ">
         <div className="h-48 overflow-visible w-1/2">
           <img
             className="rounded-3xl shadow-lg"
