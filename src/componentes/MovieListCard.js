@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Card({ movie }) {
+function MovieListCard({ movie }) {
   return (
     <div className="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
       <img
@@ -24,4 +24,4 @@ function Card({ movie }) {
   );
 }
 
-export default Card;
+export default MovieListCard;
