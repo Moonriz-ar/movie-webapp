@@ -23,8 +23,6 @@ function Detalle() {
     }
   }, [movieID]);
 
-  console.log("movie state", movie);
-
   return (
     <>
       {!token && <Navigate replace to="/" />}

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import MovieListCard from "./MovieListCard";
 
-function Resultados() {
+function Resultados({ addOrRemoveFromFavs }) {
   const { keyword } = useParams();
   const [resultMoviesList, setResultsMoviesList] = useState([]);
 
@@ -24,7 +24,13 @@ function Resultados() {
       <section className="grid xs:grid-cols-1 md:grid-cols-4 gap-5">
         {resultMoviesList.length !== 0 ? (
           resultMoviesList.map((movie) => {
-            return <MovieListCard movie={movie} key={movie.id} />;
+            return (
+              <MovieListCard
+                movie={movie}
+                key={movie.id}
+                addOrRemoveFromFavs={addOrRemoveFromFavs}
+              />
+            );
           })
         ) : (
           <p>No se encontro ninguna peli... :(</p>

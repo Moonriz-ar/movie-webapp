@@ -1,13 +1,19 @@
 import { Link } from "react-router-dom";
 
-function MovieListCard({ movie }) {
+function MovieListCard({ movie, addOrRemoveFromFavs }) {
   return (
-    <div className="bg-white border-gray-100 rounded-lg border shadow md:max-w-none overflow-hidden flex flex-col">
+    <div className="bg-white border-gray-100 rounded-lg border shadow md:max-w-none overflow-hidden flex flex-col relative">
       <img
         className="h-56 lg:h-60 w-full object-cover"
         src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
         alt={`${movie.original_title} poster`}
       />
+      <button
+        onClick={addOrRemoveFromFavs}
+        className="w-7 h-7 bg-slate-50 rounded-full flex justify-center items-center absolute top-3 right-3"
+      >
+        <span>🖤</span>
+      </button>
       <div className="p-3">
         <span className="text-sm text-gray-400">{movie.release_date}</span>
         <h3 className="font-bold text-2xl my-2">{movie.title}</h3>

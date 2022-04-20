@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import MovieListCard from "./MovieListCard";
 
-function Listado() {
+function Listado({ addOrRemoveFromFavs }) {
   const token = localStorage.getItem("token");
 
   const [moviesList, setMoviesList] = useState([]);
@@ -31,7 +31,13 @@ function Listado() {
       <h2 className="pb-5 text-xl text-slate-800">Movies list</h2>
       <section className="grid xs:grid-cols-1 md:grid-cols-4 gap-5">
         {moviesList.map((movie) => {
-          return <MovieListCard movie={movie} key={movie.id} />;
+          return (
+            <MovieListCard
+              movie={movie}
+              key={movie.id}
+              addOrRemoveFromFavs={addOrRemoveFromFavs}
+            />
+          );
         })}
       </section>
     </section>
