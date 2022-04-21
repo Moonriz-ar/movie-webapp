@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import Header from "./componentes/Header";
 import Footer from "./componentes/Footer";
@@ -11,18 +12,27 @@ import Favourites from "./componentes/Favourites";
 
 function App() {
   // functionality for favourite movies
-  const favouriteMovies = localStorage.getItem("favs");
-  let tempFavouriteMovies;
+  const [favourites, setFavourites] = useState([]);
 
-  if (favouriteMovies === null) {
-    tempFavouriteMovies = [];
-  } else {
-    tempFavouriteMovies = JSON.parse(favouriteMovies);
-  }
+  useEffect(() => {
+    const favouriteMovies = localStorage.getItem("favs");
+
+    if (favouriteMovies !== null) {
+      setFavourites(JSON.parse(favouriteMovies));
+    }
+  }, [favourites]);
 
   const addOrRemoveFromFavs = (e) => {
     const btn = e.currentTarget;
     const parentElement = btn.parentElement;
+    const favouriteMovies = localStorage.getItem("favs");
+    let tempFavouriteMovies;
+
+    if (favouriteMovies === null) {
+      tempFavouriteMovies = [];
+    } else {
+      tempFavouriteMovies = JSON.parse(favouriteMovies);
+    }
 
     const movieData = {
       poster_path: parentElement.querySelector("img").getAttribute("src"),
@@ -39,6 +49,8 @@ function App() {
     if (!movieIsInArray) {
       tempFavouriteMovies.push(movieData);
       localStorage.setItem("favs", JSON.stringify(tempFavouriteMovies));
+      setFavourites(tempFavouriteMovies);
+
       console.log(
         "se agrego la pelicula",
         JSON.parse(localStorage.getItem("favs"))
@@ -59,7 +71,7 @@ function App() {
 
   return (
     <div id="app" className="h-screen flex flex-col justify-between relative">
-      <Header />
+      <Header favourites={favourites} />
       <div className="flex-auto mb-auto px-5 pb-10 pt-40 md:pt-40  bg-slate-50">
         <Routes>
           <Route path="/" element={<Login />} end />
@@ -74,7 +86,12 @@ function App() {
           />
           <Route
             path="/favourites"
-            element={<Favourites addOrRemoveFromFavs={addOrRemoveFromFavs} />}
+            element={
+              <Favourites
+                favourites={favourites}
+                addOrRemoveFromFavs={addOrRemoveFromFavs}
+              />
+            }
           />
         </Routes>
       </div>
