@@ -11,7 +11,7 @@ function SearchBar() {
     if (keyword.length === 0) {
       Swal.fire({
         icon: "error",
-        title: "You have a enter a keyword",
+        title: "You have to enter a keyword",
       });
     } else if (keyword.length < 4) {
       Swal.fire({
