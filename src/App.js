@@ -7,6 +7,7 @@ import Login from "./componentes/Login";
 import Listado from "./componentes/Listado";
 import Detalle from "./componentes/Detalle";
 import Resultados from "./componentes/Resultados";
+import Favourites from "./componentes/Favourites";
 
 function App() {
   // functionality for favourite movies
@@ -70,6 +71,10 @@ function App() {
           <Route
             path="/resultados/:keyword"
             element={<Resultados addOrRemoveFromFavs={addOrRemoveFromFavs} />}
+          />
+          <Route
+            path="/favourites"
+            element={<Favourites addOrRemoveFromFavs={addOrRemoveFromFavs} />}
           />
         </Routes>
       </div>

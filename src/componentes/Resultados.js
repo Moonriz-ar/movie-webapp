@@ -20,7 +20,7 @@ function Resultados({ addOrRemoveFromFavs }) {
 
   return (
     <section className="max-w-lg md:max-w-6xl mx-auto">
-      <h2 className="pb-5 text-xl text-slate-800">Buscaste: {keyword}</h2>
+      <h2 className="pb-5 text-xl text-slate-800">You searched: {keyword}</h2>
       <section className="grid xs:grid-cols-1 md:grid-cols-4 gap-5">
         {resultMoviesList.length !== 0 ? (
           resultMoviesList.map((movie) => {
@@ -33,7 +33,7 @@ function Resultados({ addOrRemoveFromFavs }) {
             );
           })
         ) : (
-          <p>No se encontro ninguna peli... :(</p>
+          <p>No movies was found... :(</p>
         )}
       </section>
     </section>

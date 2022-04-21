@@ -11,7 +11,10 @@ function Header() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/listado">Listado</Link>
+            <Link to="/listado">List</Link>
+          </li>
+          <li>
+            <Link to="/favourites">Favourites</Link>
           </li>
         </ul>
       </nav>
