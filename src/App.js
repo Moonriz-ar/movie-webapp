@@ -38,7 +38,21 @@ function App() {
     if (!movieIsInArray) {
       tempFavouriteMovies.push(movieData);
       localStorage.setItem("favs", JSON.stringify(tempFavouriteMovies));
-      console.log(JSON.parse(localStorage.getItem("favs")));
+      console.log(
+        "se agrego la pelicula",
+        JSON.parse(localStorage.getItem("favs"))
+      );
+    } else {
+      let moviesLeft = tempFavouriteMovies.filter((oneMovie) => {
+        return oneMovie.id !== movieData.id;
+      });
+      tempFavouriteMovies.splice(0, tempFavouriteMovies.length, ...moviesLeft);
+
+      localStorage.setItem("favs", JSON.stringify(tempFavouriteMovies));
+      console.log(
+        "se elimino una pelicula",
+        JSON.parse(localStorage.getItem("favs"))
+      );
     }
   };
 

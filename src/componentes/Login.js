@@ -80,30 +80,39 @@ function Login() {
   return (
     <>
       {token && <Navigate to="/listado" />}
-      <h2>Login form</h2>
-      <form onSubmit={submitHandler}>
-        <label htmlFor="email">
-          <span>Email:</span>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Please enter email..."
-          />
-        </label>
+      <div className="py-3 my-5 sm:max-w-3xl sm:mx-auto">
+        <div className="bg-white shadow-lg border-gray-100 border rounded-3xl p-5 mx-3 flex flex-col relative">
+          <h2 className="pb-5 text-xl text-slate-800">Login form</h2>
+          <form onSubmit={submitHandler} className="flex flex-col items-start">
+            <label htmlFor="email" className="mt-2">
+              <span className="mr-3">Email:</span>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Please enter email..."
+              />
+            </label>
 
-        <label htmlFor="password">
-          <span>Password:</span>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Please enter password..."
-          />
-        </label>
+            <label htmlFor="password" className="mt-2">
+              <span className="mr-3">Password:</span>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Please enter password..."
+              />
+            </label>
 
-        <button type="submit">Ingresar</button>
-      </form>
+            <button
+              type="submit"
+              className="bg-rose-700 text-rose-50 px-2 py-1 mt-5 rounded"
+            >
+              Ingresar
+            </button>
+          </form>
+        </div>
+      </div>
     </>
   );
 }
