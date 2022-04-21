@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 function SearchBar() {
+  const token = localStorage.getItem("token");
   const navigate = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
@@ -24,20 +25,24 @@ function SearchBar() {
   };
 
   return (
-    <form
-      className="flex items-center space-x-3 mt-5 md:mt-0"
-      onSubmit={submitHandler}
-    >
-      <label className="text-gray-800">
-        <input
-          className="p-1"
-          type="text"
-          name="keyword"
-          placeholder="Search a movie..."
-        />
-      </label>
-      <button type="submit">Search</button>
-    </form>
+    <>
+      {token ? (
+        <form
+          className="flex items-center space-x-3 mt-5 md:mt-0"
+          onSubmit={submitHandler}
+        >
+          <label className="text-gray-800">
+            <input
+              className="p-1"
+              type="text"
+              name="keyword"
+              placeholder="Search a movie..."
+            />
+          </label>
+          <button type="submit">Search</button>
+        </form>
+      ) : null}
+    </>
   );
 }
 

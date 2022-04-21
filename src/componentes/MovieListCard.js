@@ -11,11 +11,14 @@ function MovieListCard({ movie, addOrRemoveFromFavs }) {
       <button
         onClick={addOrRemoveFromFavs}
         className="w-7 h-7 bg-slate-50 rounded-full flex justify-center items-center absolute top-3 right-3"
+        data-movie-id={movie.id}
       >
         <span>🖤</span>
       </button>
       <div className="p-3">
-        <span className="text-sm text-gray-400">{movie.release_date}</span>
+        <span className="text-sm text-gray-400" id="releaseDate">
+          {movie.release_date}
+        </span>
         <h3 className="font-bold text-2xl my-2">{movie.title}</h3>
         <p className="paragraph-normal text-gray-400">
           {`${movie.overview.substring(0, 150)}...`}

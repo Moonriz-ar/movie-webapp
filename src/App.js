@@ -9,9 +9,37 @@ import Detalle from "./componentes/Detalle";
 import Resultados from "./componentes/Resultados";
 
 function App() {
+  // functionality for favourite movies
+  const favouriteMovies = localStorage.getItem("favs");
+  let tempFavouriteMovies;
+
+  if (favouriteMovies === null) {
+    tempFavouriteMovies = [];
+  } else {
+    tempFavouriteMovies = JSON.parse(favouriteMovies);
+  }
+
   const addOrRemoveFromFavs = (e) => {
     const btn = e.currentTarget;
-    console.log(btn);
+    const parentElement = btn.parentElement;
+
+    const movieData = {
+      poster_path: parentElement.querySelector("img").getAttribute("src"),
+      release_date: parentElement.querySelector("#releaseDate").innerText,
+      title: parentElement.querySelector("h3").innerText,
+      overview: parentElement.querySelector("p").innerText,
+      id: btn.dataset.movieId,
+    };
+
+    let movieIsInArray = tempFavouriteMovies.find((oneMovie) => {
+      return oneMovie.id === movieData.id;
+    });
+
+    if (!movieIsInArray) {
+      tempFavouriteMovies.push(movieData);
+      localStorage.setItem("favs", JSON.stringify(tempFavouriteMovies));
+      console.log(JSON.parse(localStorage.getItem("favs")));
+    }
   };
 
   return (
