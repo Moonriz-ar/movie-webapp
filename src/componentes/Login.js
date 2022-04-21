@@ -106,7 +106,7 @@ function Login() {
 
             <button
               type="submit"
-              className="bg-rose-700 text-rose-50 px-2 py-1 mt-5 rounded"
+              className="bg-rose-700 text-rose-50 px-2 py-1 mt-5 rounded font-bold"
             >
               Ingresar
             </button>

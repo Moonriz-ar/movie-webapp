@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
 function Header({ favourites }) {
+  const token = localStorage.getItem("token");
   return (
     <header className="py-5 z-10 px-10 bg-rose-700 text-rose-200 flex justify-between items-center flex-col md:flex-row fixed w-full shadow-md">
       <nav className="flex space-x-5 items-center">
@@ -16,9 +17,11 @@ function Header({ favourites }) {
           <li>
             <Link to="/favourites">
               Favourites{" "}
-              <span className="text-rose-100 font-bold">
-                {favourites.length}
-              </span>
+              {token && (
+                <span className="text-rose-100 font-bold">
+                  {favourites.length}
+                </span>
+              )}
             </Link>
           </li>
         </ul>

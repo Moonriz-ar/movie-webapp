@@ -33,13 +33,18 @@ function SearchBar() {
         >
           <label className="text-gray-800">
             <input
-              className="p-1"
+              className="rounded py-1 px-2"
               type="text"
               name="keyword"
               placeholder="Search a movie..."
             />
           </label>
-          <button type="submit">Search</button>
+          <button
+            type="submit"
+            className="bg-rose-50 text-rose-700 px-2 py-1 font-bold rounded"
+          >
+            Search
+          </button>
         </form>
       ) : null}
     </>
