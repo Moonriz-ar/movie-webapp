@@ -50,7 +50,7 @@ function Login() {
       body: JSON.stringify(user),
     };
 
-    fetch("http://challenge-react.alkemy.org", settings)
+    fetch("https://node-api-proxy-alkemy.herokuapp.com/", settings)
       .then((response) => {
         console.log("response", response);
         if (!response.ok) {

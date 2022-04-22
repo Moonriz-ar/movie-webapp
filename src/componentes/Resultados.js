@@ -15,7 +15,10 @@ function Resultados({ addOrRemoveFromFavs }) {
         .then((data) => {
           setResultsMoviesList(data.results);
         });
-    } catch (err) {}
+      console.log("this is the keyword", keyword);
+    } catch (err) {
+      console.log(err);
+    }
   }, [keyword]);
 
   return (
