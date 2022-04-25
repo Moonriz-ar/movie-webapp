@@ -5,6 +5,13 @@
 
   <p align="center">
   This project was completed while following along the <b>React I Skill Up</b> module in Alkemy. It was a really good way to further absorb basic React concepts, also learnt new concepts such as: 1- What is React Router and how to use it. 2- How to restrict access to certain pages according if user is logged in or not. 3- Dynamic path with React Router.
+  <br />
+  <br />
+  Please login with following credentials:
+  <br />
+  Username: challenge@alkemy.org
+  <br />
+  Password: react
     <br />
     <br />   
   </p>
