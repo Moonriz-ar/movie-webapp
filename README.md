@@ -1,9 +1,9 @@
 <div id="top"></div>
 
 <!-- PROJECT LOGO -->
-<h3 align="center">Alkemy React I - Movie App</h3>
+<h3>Alkemy React I - Movie App</h3>
 
-  <p align="center">
+  <p>
   This project was completed while following along the <b>React I Skill Up</b> module in Alkemy. It was a really good way to further absorb basic React concepts, also learnt new concepts such as: 1- What is React Router and how to use it. 2- How to restrict access to certain pages according if user is logged in or not. 3- Dynamic path with React Router.
   <br />
   <br />
